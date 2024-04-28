@@ -1,0 +1,14 @@
+# Use a lightweight base image
+FROM nginx:latest
+
+# Set the working directory
+WORKDIR /usr/share/nginx/html
+
+# Copy the HTML and CSS files to the container
+COPY . .
+
+# Expose port 80 (default HTTP port)
+EXPOSE 80
+
+# Command to start the Nginx server
+CMD ["nginx", "-g", "daemon off;"]
